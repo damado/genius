@@ -19,7 +19,7 @@ h3,
 h4,
 h5,
 h6 {
-    text-transform: uppercase;
+/*    text-transform: uppercase;*/
     font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
@@ -45,7 +45,6 @@ hr {
    display: block;*/
    display: none;
 }
-
 
 .address-bar {
     display: none;
@@ -119,12 +118,12 @@ hr {
 
 footer {
     background: #fff;
-    background: rgba(255,255,255,0.9);
+    height: 60px;
 }
 
 footer p {
     margin: 0;
-    padding: 50px 0;
+    padding-top:20px;
 }
 
 @media screen and (min-width:768px) {
@@ -209,7 +208,7 @@ footer p {
         float: none;
         margin: 0 auto;
         table-layout: fixed;
-        font-size: 1.25em;
+        font-size: 1.00em;
     }
 }
 

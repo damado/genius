@@ -1,0 +1,13 @@
+.imagen-principal {
+	height: 400px;
+	width: 700px;
+}
+.imagen-secundaria {
+	height: 200px;
+	width: 285px;
+	padding-bottom: 1%;
+}
+.imagen-principal:hover, .imagen-secundaria:hover {
+ 	border: 3px solid #2874A6;
+ 	cursor: pointer;
+}

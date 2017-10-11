@@ -1,0 +1,56 @@
+<div class="container cont-app">
+	<div class="row">
+		<div class="box">
+			<div class="col-md-8 col-md-offset-2 recuadro-detalle-producto">
+
+				<carousel>
+				  <slide *ngFor="let imagen of producto?.imagenes">
+				    <img class=" img-responsive imagen-carousel" src="../{{imagen?.path_img}}">
+				    <div class="carousel-caption">
+				      <h3>{{ imagen?.epigrafe }}</h3>
+				    </div>
+				  </slide>
+				</carousel>
+
+				<div class="row fila-detalle-seccion">
+					<div class="col-md-12 text-center">
+						<h2>{{ producto?.nombre }}</h2>
+						<app-lista-iconos [iconos]="producto?.iconos"></app-lista-iconos>
+					</div>
+				</div>
+
+				<div class="row fila-detalle-seccion">
+					<div class="col-md-4 detalle-seccion">
+						<h3>Destino</h3><h4>{{ producto?.destino_turistico_pais }} - {{ producto?.destino_turistico_lugar }}</h4>
+					</div>
+					<div class="col-md-4 col-md-offset-4 detalle-monto-final">
+						<h3>Precio final</h3>
+						<h4>$ {{ producto?.valor }}</h4>
+					</div>
+				</div>
+				
+
+				<div class="row fila-detalle-seccion">
+					<div class="col-md-12 detalle-seccion">
+						<h3>Descripción</h3>
+						<p *ngFor="let comentario of producto?.comentarios">
+							- {{ comentario?.comentario }}
+						</p>
+					</div>
+				</div>
+
+				<div class="row fila-detalle-seccion">
+					<div class="col-md-12 detalle-seccion">
+						<p class="detalle-bases-condiciones">{{ producto?.bases_y_condiciones?.texto }}</p>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+
+		<div class="box">
+			<app-financiacion></app-financiacion>
+		</div>
+	</div>
+</div>

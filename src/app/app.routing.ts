@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
-import { PromocionesComponent } from './promociones/promociones.component';
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { PromocionesComponent } from './components/promociones/promociones.component';
+import { DetallePromocionComponent } from './components/detalle-promocion/detalle-promocion.component';
 
 const routes: Routes = [
 	{ path: '',  redirectTo: 'home', pathMatch: 'full' },
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'promociones', component: PromocionesComponent },
+  { path: 'promociones/:id', component: DetallePromocionComponent },
   { path: '**', component: HomeComponent }
 
 ];
