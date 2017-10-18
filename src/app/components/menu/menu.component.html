@@ -44,9 +44,7 @@
         <li>
             <a href="">Promociones</a>
             <ul>
-                <li><a [routerLink]="['/promociones']">Aereos</a></li>
-                <li><a href="">Mi pais</a></li>
-                <li><a href="">Playa</a></li>
+                <li *ngFor="let tipo of tipos_productos"><a [routerLink]="['tipos_productos', tipo.id, 'promociones']">{{tipo.descripcion}}</a></li>
             </ul>
         </li>
         <li><a [routerLink]="['/about']">Sobre Nosotros</a></li>

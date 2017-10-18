@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { CarouselConfig } from 'ngx-bootstrap/carousel';
 import { PromocionService } from '../../services/promocion.service';
 import { Producto } from '../../class/producto';
@@ -11,23 +11,35 @@ import { Producto } from '../../class/producto';
 })
 export class PromocionesComponent implements OnInit {
 
-  constructor(protected promocionService: PromocionService, protected router: Router) { }
+  private idTipoProducto: number;
+  public productos: Array<Producto> = null;
 
-  public productos: Array<Producto>;
+  constructor(protected promocionService: PromocionService, protected router: Router, private route: ActivatedRoute) { }
+
 
   ngOnInit() {
-    this.getProductos();
+    this.route.params.subscribe(parametros => {
+      this.idTipoProducto = parametros['id'];
+      this.getProductos();
+    });
   }
 
   /**
   * Invoca al servicio de promociones para obtener todos los productos vigentes.
   **/
   getProductos(): void {
-  	this.promocionService.getProductos().subscribe((productos) => {
-  		this.productos = productos;
+    this.promocionService.getProductos(this.idTipoProducto).subscribe((productos) => {
+      if (productos.length !== 0) {
+        this.productos = productos;
+        return;
+      }
+      this.productos = null;
   	})
   }
 
+  /**
+  * Navega hacia el detalle del producto.
+  **/
   mostrarDetalleProducto(producto) {
     this.router.navigate(['promociones', producto.id]);
   }

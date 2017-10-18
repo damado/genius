@@ -6,6 +6,7 @@ import { Imagen } from '../class/imagen';
 import { Icono } from '../class/icono';
 import { Comentario } from '../class/comentario';
 import { BasesYCondiciones } from '../class/bases-y-condiciones';
+import { TipoProducto } from '../class/tipo-producto';
 import { environment } from '../../environments/environment';
 
 @Injectable()
@@ -18,8 +19,8 @@ export class PromocionService {
   /**
   * Retorna todos los productos.
   **/
-  getProductos() {
-  	return this.http.get(this.url + 'productos').map((response) => {
+  getProductos(idTipo: number) {
+    return this.http.get(this.url + 'tipos_productos/' + idTipo + '/productos').map((response) => {
   		return response.json().map((producto) => {
         const prod = new Producto().fromJSON(producto);
         prod.setImagenes(producto.imagenes.map(imagen => new Imagen().fromJSON(imagen)));
@@ -41,6 +42,18 @@ export class PromocionService {
       prod.setIconos(producto.json().iconos.map(icono => new Icono().fromJSON(icono)));
       console.log(prod);
       return prod;
+    });
+  }
+
+  /**
+  * Busca todos los tipos de productos.
+  **/
+  getTiposProductos() {
+    return this.http.get(this.url + 'tipos_productos').map((response) => {
+      return response.json().map((tipoProducto) => {
+        const tipo = new TipoProducto().fromJSON(tipoProducto);
+        return tipo;
+      });
     });
   }
 

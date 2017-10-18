@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'promociones', component: PromocionesComponent },
+  { path: 'tipos_productos/:id/promociones', component: PromocionesComponent },
   { path: 'promociones/:id', component: DetallePromocionComponent },
   { path: '**', component: HomeComponent }
 
