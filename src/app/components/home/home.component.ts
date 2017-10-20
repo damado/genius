@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PromocionService } from '../../services/promocion.service';
+import { Producto } from '../../class/producto';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+	public productos: Array<Producto>;
+
+  constructor(protected promocionService: PromocionService) { }
 
   ngOnInit() {
+		this.promocionService.getUltimos5Productos().subscribe(productos => {
+			this.productos = productos;
+		});
   }
 
 }

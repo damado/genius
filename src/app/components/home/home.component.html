@@ -26,17 +26,19 @@
 
                 <div class="row">
                   <div class="col-md-3">
-                    <img class="img-responsive imagen-secundaria" src="assets/img/promociones/salta2.jpg" alt="">  
-                    <img class="img-responsive imagen-secundaria" src="assets/img/promociones/buzios.jpg" alt="">  
+                    <img class="img-responsive imagen-secundaria" src="../{{productos && productos[1]?.getPathImagenPrincipal()}}" alt="">
+                    <img class="img-responsive imagen-secundaria" src="../{{productos && productos[2]?.getPathImagenPrincipal()}}" alt="">
                   </div>
 
                   <div class="col-md-6">
-                    <img class="img-responsive imagen-principal" src="assets/img/promociones/bariloche.jpg" alt="">
+                    <!-- <img class="img-responsive imagen-principal" src="assets/img/promociones/bariloche.jpg" alt=""> -->
+                    <img src="../{{productos && productos[0]?.getPathImagenPrincipal()}}" class="img-responsive miniatura-producto">
+                    <div class="subtitulo-promocion-principal">Texto sobre la imagen</div>
                   </div>
 
                   <div class="col-md-3">
-                    <img class="img-responsive imagen-secundaria" src="assets/img/promociones/salta3.jpg" alt="">  
-                    <img class="img-responsive imagen-secundaria" src="assets/img/promociones/cancun.jpg" alt="">  
+                    <img class="img-responsive imagen-secundaria" src="../{{productos && productos[3]?.getPathImagenPrincipal()}}" alt="">
+                    <img class="img-responsive imagen-secundaria" src="../{{productos && productos[4]?.getPathImagenPrincipal()}}" alt="">
                   </div>
                 </div>
 

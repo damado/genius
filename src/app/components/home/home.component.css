@@ -1,13 +1,22 @@
 .imagen-principal {
 	height: 400px;
-	width: 700px;
+	width: 540px;
 }
 .imagen-secundaria {
 	height: 200px;
 	width: 285px;
 	padding-bottom: 1%;
 }
-.imagen-principal:hover, .imagen-secundaria:hover {
+.imagen-principal, .imagen-secundaria:hover {
+	border: 3px solid #2874A6;
+	cursor: pointer;
+}
+.subtitulo-promocion-principal {
+	position: absolute;
+	width: 540px;
+	background-color: white;
+}
+.subtitulo-promocion-principal:hover {
  	border: 3px solid #2874A6;
  	cursor: pointer;
 }

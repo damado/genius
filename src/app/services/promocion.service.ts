@@ -57,4 +57,17 @@ export class PromocionService {
     });
   }
 
+  /**
+  * Retorna los ultimos 5 productos cargados.
+  **/
+  getUltimos5Productos() {
+    return this.http.get(this.url + 'ultimos_productos').map((response) => {
+      return response.json().map((producto) => {
+        const prod = new Producto().fromJSON(producto);
+        prod.setImagenes(producto.imagenes.map(imagen => new Imagen().fromJSON(imagen)));
+        return prod;
+      });
+    });
+  }
+
 }

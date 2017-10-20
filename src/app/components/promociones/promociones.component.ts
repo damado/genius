@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { CarouselConfig } from 'ngx-bootstrap/carousel';
 import { PromocionService } from '../../services/promocion.service';
 import { Producto } from '../../class/producto';
 
