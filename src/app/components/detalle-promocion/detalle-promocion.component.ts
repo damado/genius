@@ -16,9 +16,10 @@ export class DetallePromocionComponent implements OnInit {
   constructor(private route: ActivatedRoute, private promocionService: PromocionService) { }
 
   ngOnInit() {
-  	this.route.params.subscribe(parametros => {
-  		this.idProducto = parametros['id'];
-  		this.buscarProducto();
+    this.route.params.subscribe(parametros => {
+      this.idProducto = parametros['id'];
+      this.buscarProducto();
+      window.scrollTo(0, 250);
   	});
   }
 

@@ -7,7 +7,7 @@
 	width: 285px;
 	padding-bottom: 1%;
 }
-.imagen-principal, .imagen-secundaria:hover {
+.imagen-principal:hover + .subtitulo-promocion-principal {
 	border: 3px solid #2874A6;
 	cursor: pointer;
 }
@@ -15,8 +15,53 @@
 	position: absolute;
 	width: 540px;
 	background-color: white;
+  top: 299px;
+  text-align: center;
+	border-left: 3px solid #2874A6;
+	border-right: 3px solid #2874A6;
+	background: rgba(204, 204, 204, 0.5);
+	height: 50px;
 }
-.subtitulo-promocion-principal:hover {
- 	border: 3px solid #2874A6;
- 	cursor: pointer;
+.subtitulo-promocion-secundaria-top {
+  position: absolute;
+  width: 254px;
+  background-color: white;
+  top: 132px;
+  text-align: center;
+  border-left: 3px solid #2874A6;
+  border-right: 3px solid #2874A6;
+  background: rgba(204, 204, 204, 0.5);
+  height: 50px;
+}
+.subtitulo-promocion-secundaria-bot {
+  position: absolute;
+  width: 254px;
+  background-color: white;
+  top: 325px;
+  text-align: center;
+  border-left: 3px solid #2874A6;
+  border-right: 3px solid #2874A6;
+  background: rgba(204, 204, 204, 0.5);
+  height: 50px;
+}
+
+#rc:hover + #gti {
+	border-left: 3px solid #2874A6;
+	border-right: 3px solid #2874A6;
+	cursor: pointer;
+}
+
+#gti {
+	border-left: 3px solid #2874A6;
+	border-right: 3px solid #2874A6;
+	cursor: pointer;
+}
+
+#rc:hover {
+	border: 3px solid #2874A6;
+	cursor: pointer;
+}
+
+.subtitulo-producto-nombre {
+  margin-bottom: 0px;
 }

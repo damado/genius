@@ -34,7 +34,6 @@ ul li:hover ul{
 	opacity: 1;
 }
 
-
 .ul-submenu {
 	display: block;
 }
@@ -54,7 +53,7 @@ ul li:hover ul{
 	border: none;
 	background-color: black;
 	display: table-caption;
-	        border-radius: 0;
+  border-radius: 0;
 	text-align: center;
 	z-index: 2;
 }

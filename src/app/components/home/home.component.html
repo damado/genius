@@ -10,7 +10,6 @@
                 <hr class="tagline-divider">
                 <h2>
                    <small>La agencia que me recomendó un amigo
-                        <!--<strong>Start Bootstrap</strong>-->
                     </small> 
                 </h2>
             </div>
@@ -26,30 +25,39 @@
 
                 <div class="row">
                   <div class="col-md-3">
-                    <img class="img-responsive imagen-secundaria" src="../{{productos && productos[1]?.getPathImagenPrincipal()}}" alt="">
-                    <img class="img-responsive imagen-secundaria" src="../{{productos && productos[2]?.getPathImagenPrincipal()}}" alt="">
+                    <img class="img-responsive imagen-secundaria" (click)="mostrarDetalleProducto(productos[1])" src="../{{productos && productos[1]?.getPathImagenPrincipal()}}" id="rc">
+                    <div *ngIf="productos" class="subtitulo-promocion-secundaria-top" (click)="mostrarDetalleProducto(productos[1])" id="gti">
+                        <h5 class="subtitulo-producto-nombre" *ngIf="productos">{{productos[1]?.nombre}}</h5>
+                        <b>$ {{productos[1]?.valor}}</b>
+                    </div>
+                    <img class="img-responsive imagen-secundaria" (click)="mostrarDetalleProducto(productos[2])" src="../{{productos && productos[2]?.getPathImagenPrincipal()}}" id="rc">
+                    <div *ngIf="productos" class="subtitulo-promocion-secundaria-bot" (click)="mostrarDetalleProducto(productos[2])" id="gti">
+                        <h5 class="subtitulo-producto-nombre">{{productos[2]?.nombre}}</h5>
+                        <b>$ {{productos[2]?.valor}}</b>
+                    </div>
                   </div>
 
-                  <div class="col-md-6">
-                    <!-- <img class="img-responsive imagen-principal" src="assets/img/promociones/bariloche.jpg" alt=""> -->
-                    <img src="../{{productos && productos[0]?.getPathImagenPrincipal()}}" class="img-responsive miniatura-producto">
-                    <div class="subtitulo-promocion-principal">Texto sobre la imagen</div>
+                  <div class="col-md-6" (click)="mostrarDetalleProducto(productos[0])">
+                    <img src="../{{productos && productos[0]?.getPathImagenPrincipal()}}" class="img-responsive miniatura-producto" id="rc">
+                    <div *ngIf="productos" class="subtitulo-promocion-principal" id="gti">
+                        <h4 class="subtitulo-producto-nombre"><b>{{productos[0]?.nombre}}</b></h4>
+                        <b>$ {{productos[0]?.valor}}</b>
+                    </div>
                   </div>
 
                   <div class="col-md-3">
-                    <img class="img-responsive imagen-secundaria" src="../{{productos && productos[3]?.getPathImagenPrincipal()}}" alt="">
-                    <img class="img-responsive imagen-secundaria" src="../{{productos && productos[4]?.getPathImagenPrincipal()}}" alt="">
+                    <img class="img-responsive imagen-secundaria" (click)="mostrarDetalleProducto(productos[3])" src="../{{productos && productos[3]?.getPathImagenPrincipal()}}" id="rc">
+                    <div *ngIf="productos" class="subtitulo-promocion-secundaria-top" (click)="mostrarDetalleProducto(productos[3])" id="gti" >
+                        <h5 class="subtitulo-producto-nombre">{{productos[3]?.nombre}}</h5>
+                        <b>$ {{productos[3]?.valor}}</b>
+                    </div>
+                    <img class="img-responsive imagen-secundaria" (click)="mostrarDetalleProducto(productos[4])" src="../{{productos && productos[4]?.getPathImagenPrincipal()}}" id="rc">
+                    <div *ngIf="productos" class="subtitulo-promocion-secundaria-bot" (click)="mostrarDetalleProducto(productos[4])" id="gti" >
+                        <h5 class="subtitulo-producto-nombre">{{productos[4]?.nombre}}</h5>
+                        <b>$ {{productos[4]?.valor}}</b>
+                    </div>
                   </div>
                 </div>
-
- <!--                <img class="img-responsive img-fluid img-border img-left" src="assets/img/promociones/salta2.jpg" alt="">
-
-                <img class="img-responsive img-fluid img-border img-left" src="assets/img/promociones/salta2.jpg" alt="">
-
-                <img class="img-responsive img-fluid img-border img-right" src="assets/img/promociones/salta2.jpg" alt="">
-
-                <img class="img-responsive img-fluid img-border img-left" src="assets/img/promociones/salta2.jpg" alt=""> -->
-
             </div>
         </div>
     </div>

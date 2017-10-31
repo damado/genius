@@ -14,7 +14,6 @@ export class ContactoService {
   **/
   contactarAgencia(nombre: string, email:string, numero_telefono: string, arrayChecks: Array<string>, cantidad_dias:string, fecha_viaje: string, cantidad_personas: string, motivo_contacto: string, comentarios: string) {
     const body = this.formatearJsonBody(nombre, email, numero_telefono, arrayChecks, cantidad_dias, fecha_viaje, cantidad_personas, motivo_contacto, comentarios);
-    console.log(body);
   	const headers = new Headers({'Content-Type': 'application/json'});
   	const options = new RequestOptions({headers: headers});
     this.http.options(this.url + 'contacto');

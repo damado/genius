@@ -40,7 +40,6 @@ export class PromocionService {
       prod.setComentarios(producto.json().comentarios.map(comentario => new Comentario().fromJSON(comentario)));
       prod.setBasesYCondiciones(new BasesYCondiciones().fromJSON(producto.json().bases_y_condiciones));
       prod.setIconos(producto.json().iconos.map(icono => new Icono().fromJSON(icono)));
-      console.log(prod);
       return prod;
     });
   }
