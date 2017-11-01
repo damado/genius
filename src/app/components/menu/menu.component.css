@@ -24,7 +24,7 @@ ul li a {
 ul ul {
 	position: absolute;
 	top: 250px;
-	display: block;
+	display: none;
 	background: white;
 	z-index: 2;
 	opacity: 0;
@@ -32,6 +32,11 @@ ul ul {
 
 ul li:hover ul{
 	opacity: 1;
+	display: block;
+}
+
+ul li ul li:hover {
+	background: #2874A6;
 }
 
 .ul-submenu {
