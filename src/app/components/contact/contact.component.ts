@@ -10,6 +10,7 @@ import { ContactoService } from '../../services/contacto.service';
 export class ContactComponent implements OnInit {
 
 	public formulario: FormGroup;
+  public mensajeExito = null;
   private arrayChecks: Array<string> = [];
 
   constructor(protected fb: FormBuilder, protected contactoService: ContactoService) { }
@@ -50,6 +51,7 @@ export class ContactComponent implements OnInit {
     const motivo_contacto = this.formulario.get('motivo_contacto').value;
     const comentarios = this.formulario.get('comentarios').value;
     this.contactoService.contactarAgencia(nombre, mail, numero_telefono, this.arrayChecks, cantidad_dias, fecha_viaje, cantidad_personas, motivo_contacto, comentarios);
+    this.mensajeExito = 'Su información se mando con éxito. Nos mantendremos en contacto.'
   }
 
   /**

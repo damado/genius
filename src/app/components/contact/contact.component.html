@@ -44,12 +44,12 @@
                             </div>
                             <div class="form-group col-lg-4">
                                 <label>¿Cuál es tu correo electrónico? (*)</label>
-                                <img src="assets/img/Iconos/if_mail_1814108.jpg">
+                                <img src="assets/img/iconos/if_mail_1814108.jpg">
                                 <input type="email" class="form-control" id="mail" formControlName="mail" placeholder="ejemplo@gmail.com">
                             </div>
                             <div class="form-group col-lg-4">
                                 <label>¿Cuál es tu número de teléfono?</label>
-                                <img src="assets/img/Iconos/telefono.jpg">
+                                <img src="assets/img/iconos/telefono.jpg">
                                 <input type="number" class="form-control" formControlName="numero_telefono">
                             </div>
                             <div class="clearfix"></div>
@@ -60,14 +60,14 @@
                     			<label>
                     			Tengo vacaciones y viajar es la mejor decisión
                     			</label>
-                    			<img src="assets/img/Iconos/Sungalsess.jpg">
+                    			<img src="assets/img/iconos/Sungalsess.jpg">
                                 <input type="checkbox" formControlName="vacaciones" (click)="agregarCheck('vacaciones', 'Tengo vacaciones y viajar es la mejor decisión')" >
                             </div>
                             <div class="form-group col-lg-12">
                     			<label>
                     			Quiero escaparme un finde largo
                     			</label>
-                    			<img src="assets/img/Iconos/escape.jpg">
+                    			<img src="assets/img/iconos/escape.jpg">
                                 <input type="checkbox" formControlName="escapada_finde" (click)="agregarCheck('escapada_finde', 'Quiero escaparme un finde largo')">
                             </div>
                             <div class="form-group col-lg-12">
@@ -98,7 +98,7 @@
                     			<label>
                     			Mi cuerpo pide playa
                     			</label>
-                    			<img src="assets/img/Iconos/pineapple.jpg">
+                    			<img src="assets/img/iconos/pineapple.jpg">
                                 <input type="checkbox" formControlName="playa" (click)="agregarCheck('playa', 'Mi cuerpo pide playa')">
                             </div>
                             <div class="form-group col-lg-12">
@@ -154,6 +154,9 @@
                                 </button>
                                 <small *ngIf="!formulario.get('mail').valid || !formulario.get('nombre').valid">
                                     Por favor, complete los campos obligatorios marcados con (*).
+                                </small>
+                                <small *ngIf="mensajeExito">
+                                    {{mensajeExito}}
                                 </small>
                             </div>
                         </form>
